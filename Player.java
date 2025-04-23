@@ -25,6 +25,7 @@ public class Player {
     }
 
     @Override
+    //Display Method
     public String toString() {
         return "Player{" +
                "Name='" + Name + '\'' +
