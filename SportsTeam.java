@@ -1,71 +1,103 @@
 //SportTeam.java
-public class SportTeam{
+public class SportTeam {
 
-    //SportTeam Fields
+    // SportTeam Fields
     private String SportTeamName;
     private String City;
     private int ChampionshipsWon;
     private String Coach;
     private String jerseyNo;
 
-    //Constructors to initialize
-    public SportTeam(String SportTeamName, String City, int ChampionshipsWon,String Coach, String jerseyNo){
+    // Constructors to initialize
+    public SportTeam(String SportTeamName, String City, int ChampionshipsWon, String Coach, String jerseyNo)
+            throws InvalidSportTeamDataException {
+        if (SportTeamName == null || SportTeamName.isEmpty()) {
+            throw new InvalidSportTeamDataException("SportTeamName cannot be empty.");
+        }
+        if (City == null || City.isEmpty()) {
+            throw new InvalidSportTeamDataException("City cannot be empty.");
+        }
+        if (ChampionshipsWon < 0) {
+            throw new InvalidSportTeamDataException("ChampionshipsWon cannot be negative.");
+        }
+        if (Coach == null || Coach.isEmpty()) {
+            throw new InvalidSportTeamDataException("Coach cannot be empty.");
+        }
+        if (jerseyNo == null || jerseyNo.isEmpty()) {
+            throw new InvalidSportTeamDataException("jerseyNo cannot be empty.");
+        }
         this.SportTeamName = SportTeamName;
         this.City = City;
         this.ChampionshipsWon = ChampionshipsWon;
         this.Coach = Coach;
-        this.jerseyNo=jerseyNo;
+        this.jerseyNo = jerseyNo;
     }
-    //Getter for SportTeamName
-    public String getSportTeamName(){
+
+    // Getter for SportTeamName
+    public String getSportTeamName() {
         return SportTeamName;
     }
 
-    //Setter for SportTeamName
-    public void setSportTeamName(String SportTeamName){
-        this.SportTeamName = SportTeamName;
-    }
-    
-    //Getter for ChampionshipsWon
-    public double getChampionshipsWon(){
-        return championshipsWon;
+    public int getChampionshipsWon() {
+        return ChampionshipsWon;
     }
 
-    //Setter for ChampionshipsWon
-    Public void setChampionshipsWon(int ChampionshipsWon){
-        this.ChampionshipsWon = ChampionshipsWon;
-    }
-
-    //Getter for Coach
-    public String getCoach(){
+    // Getter for Coach
+    public String getCoach() {
         return Coach;
     }
 
-    //Setter for Coach
-    public void setCoach(String Coach){
+    // Getter for City
+    public String getCity() {
+        return City;
+    }
+
+    public String getjerseyNo() {
+        return jerseyNo;
+    }
+
+    // Setter for SportTeamName
+    public void setSportTeamName(String SportTeamName) throws InvalidSportTeamDataException {
+        if (SportTeamName == null || SportTeamName.isEmpty()) {
+            throw new InvalidSportTeamDataException("SportTeamName cannot be empty.");
+        }
+        this.SportTeamName = SportTeamName;
+    }
+
+    // Setter for ChampionshipsWon
+    public void setChampionshipsWon(int ChampionshipsWon) throws InvalidSportTeamDataException {
+        if (ChampionshipsWon < 0) {
+            throw new InvalidSportTeamDataException("ChampionshipsWon cannot be negative.");
+        }
+        this.ChampionshipsWon = ChampionshipsWon;
+    }
+
+    // Setter for Coach
+    public void setCoach(String Coach) throws InvalidSportTeamDataException {
+        if (Coach == null || Coach.isEmpty()) {
+            throw new InvalidSportTeamDataException("Coach cannot be empty.");
+        }
         this.Coach = Coach;
     }
 
-     //Getter for City
-    public String getCity(){
-        return city;
-    }
-
-    //Setter for City
-    public void setCity(String City){
+    // Setter for City
+    public void setCity(String City) throws InvalidSportTeamDataException {
+        if (City == null || City.isEmpty()) {
+            throw new InvalidSportTeamDataException("City cannot be empty.");
+        }
         this.City = City;
     }
 
-    public String getjerseyNo(){
-       return jerseyNo;
+    public void setjerseyNo(String jerseyNo) throws InvalidSportTeamDataException {
+        if (jerseyNo == null || jerseyNo.isEmpty()) {
+            throw new InvalidSportTeamDataException("jerseyNo cannot be empty.");
+        }
+        this.jerseyNo = jerseyNo;
     }
 
-    public void setjerseyNo(String jerseyNo){
-        this.jerseyNo=jerseyNo;
-      
-    @Override
-    //Display Methods
-    public String toString(){
-        return "SportTeam\n" + "SportTeamName: " + SportTeamName + ", City: " + City + ", ChampionshipsWon: " + ChampionshipsWon + "Coach: " + Coach "jerseyNo"+jerseyNo;
+    // Display Methods
+    public void displayData() {
+        System.out.printf("SportTeamName:%s\n City:%s\n championshipWon:%d\n Coach:%s\n jerseyNo:%s\n",
+                SportTeamName, City, ChampionshipsWon, Coach, jerseyNo);
     }
 }
