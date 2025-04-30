@@ -16,12 +16,12 @@ public class SorterSearcher {
         }
     }
 
-    // Insertion Sort: Sort by Age
-    public static void insertionSortByAge(Captain[] captains) {
-        for (int i = 1; i < captains.length; i++) {
+    // Insertion Sort: Sort by number of ChampionshipsWon
+    public static void insertionSort(Captain[] captains){
+        for (int i = 1; i < captains.length; i++){
             Captain key = captains[i];
             int j = i - 1;
-            while (j >= 0 && captains[j].getAge() > key.getAge()) {
+            while (j >= 0 && captains[j].getChampionshipsWon() > key.getChampionshipsWon()) {
                 captains[j + 1] = captains[j];
                 j--;
             }
