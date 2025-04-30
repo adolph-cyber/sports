@@ -34,6 +34,7 @@ public class MainTeamRunner{
                 System.out.println();
             }
 
+            // Demonstrating binary search by Age
             int ageToSearch = 30;
             int indexBinary = SorterSearcher.binarySearchByAge(captains, ageToSearch);
             if (indexBinary != -1) {
@@ -41,7 +42,8 @@ public class MainTeamRunner{
             } else {
                 System.out.println("Binary Search: Captain with age " + ageToSearch + " not found.");
             }
-
+            
+            //Demonstrating linear search
             String sportToSearch = "Football";
             int indexLinear = SorterSearcher.linearSearchBySport(captains, sportToSearch);
             if (indexLinear != -1) {
