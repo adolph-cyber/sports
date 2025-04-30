@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class MainTeamRunner {
-    public static void main(String[] args) {
-        try {
+public class MainTeamRunner{
+    public static void main(String[] args){
+        try{
             Captain[] captains = new Captain[6];
             captains[0] = new Captain("Kaizer Chiefs", "Johannesburg", 55, "Arthur Zwane", "15", "Itumeleng Khune", "Goalkeeper", 36, "Football", "Team Captain");
             captains[1] = new Captain("Orlando Pirates", "Soweto", 40, "Jose Riveiro", "1", "Innocent Maela", "Defender", 31, "Football", "Vice Captain");
@@ -17,6 +17,7 @@ public class MainTeamRunner {
                 System.out.println();
             }
 
+            //Demonstrating Selection Sort by Age
             SorterSearcher.selectionSortByAge(captains);
 
             System.out.println("=== AFTER SORTING BY AGE (Selection Sort) ===");
@@ -24,6 +25,12 @@ public class MainTeamRunner {
                 captain.displayData();
                 System.out.println();
             }
+
+            //Demonstrating Insertion Sort by number of championshipsWon 
+            SorterSearcher.insertionSort(captains);
+            for (Captain s : captains){
+                captain.displayData();
+                System.out.println();
 
             int ageToSearch = 30;
             int indexBinary = SorterSearcher.binarySearchByAge(captains, ageToSearch);
