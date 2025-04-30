@@ -11,8 +11,12 @@ public class Captain extends FootballPlayer {
         this.leadershipRole = leadershipRole;
     }
 
-    public String getLeadershipRole() { return leadershipRole; }
+    //Getter for LeadershipRole
+    public String getLeadershipRole() {
+        return leadershipRole;
+    }
 
+    //Setter for LeadershipRole
     public void setLeadershipRole(String leadershipRole) throws InvalidSportTeamDataException {
         if (leadershipRole == null || leadershipRole.isEmpty())
             throw new InvalidSportTeamDataException("Leadership role cannot be empty.");
@@ -20,6 +24,7 @@ public class Captain extends FootballPlayer {
     }
 
     @Override
+    //Display Method
     public void displayData() {
         super.displayData();
         System.out.printf("Leadership Role: %s\n", leadershipRole);
