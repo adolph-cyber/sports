@@ -29,8 +29,9 @@ public class MainTeamRunner{
             //Demonstrating Insertion Sort by number of championshipsWon 
             SorterSearcher.insertionSort(captains);
             for (Captain s : captains){
-                captain.displayData();
+                s.displayData();
                 System.out.println();
+            }
 
             int ageToSearch = 30;
             int indexBinary = SorterSearcher.binarySearchByAge(captains, ageToSearch);
