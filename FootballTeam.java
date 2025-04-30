@@ -1,6 +1,6 @@
 
 // BasketballTeam.java
-public class BasketballTeam extends SportTeam{
+public class FootballTeam extends SportTeam{
 
     private int conferenceTitles;
 
