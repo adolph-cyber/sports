@@ -1,32 +1,49 @@
-
 // Player.java
-public class Player {
-    private String Name;
-    private int JerseyNumber;
+public class Player extends SportTeam {
+    private String playerName;
+    private String position;
+    private int age;
 
-    public Player(String Name, int JerseyNumber) {
-       if (Name == null || Name.trim().isEmpty()) {
-            throw new IllegalArgumentException("Player name cannot be null or empty.");
-        }
-         if (JerseyNumber < 0) {
-            // Jersey numbers are non negative
-            throw new IllegalArgumentException("Jersey number cannot be negative.");
-        }
-        this.Name = Name;
-        this.JerseyNumber = JerseyNumber;
+    public Player(String sportTeamName, String city, int championshipsWon, String coach, String jerseyNo,
+                  String playerName, String position, int age) throws InvalidSportTeamDataException {
+        super(sportTeamName, city, championshipsWon, coach, jerseyNo);
+        if (playerName == null || playerName.isEmpty())
+            throw new InvalidSportTeamDataException("Player name cannot be empty.");
+        if (position == null || position.isEmpty())
+            throw new InvalidSportTeamDataException("Position cannot be empty.");
+        if (age < 0)
+            throw new InvalidSportTeamDataException("Age cannot be negative.");
+
+        this.playerName = playerName;
+        this.position = position;
+        this.age = age;
     }
-//getter for Name
-    public String getName() {
-        return Name;
+
+    public String getPlayerName() { return playerName; }
+    public String getPosition() { return position; }
+    public int getAge() { return age; }
+
+    public void setPlayerName(String playerName) throws InvalidSportTeamDataException {
+        if (playerName == null || playerName.isEmpty())
+            throw new InvalidSportTeamDataException("Player name cannot be empty.");
+        this.playerName = playerName;
     }
-// getter for JerseyNumber
-    public int getJerseyNumber() {
-        return JerseyNumber;
+
+    public void setPosition(String position) throws InvalidSportTeamDataException {
+        if (position == null || position.isEmpty())
+            throw new InvalidSportTeamDataException("Position cannot be empty.");
+        this.position = position;
+    }
+
+    public void setAge(int age) throws InvalidSportTeamDataException {
+        if (age < 0)
+            throw new InvalidSportTeamDataException("Age cannot be negative.");
+        this.age = age;
     }
 
     @Override
-    //Display Method
-    public String toString() {
-        return "Player\n" + "Name: " + Name + ", JerseyNumber: " + JerseyNumber;
+    public void displayData() {
+        super.displayData();
+        System.out.printf("PlayerName: %s\nPosition: %s\nAge: %d\n", playerName, position, age);
     }
 }
