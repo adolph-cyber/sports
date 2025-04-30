@@ -28,6 +28,7 @@ public class MainTeamRunner{
 
             //Demonstrating Insertion Sort by number of championshipsWon 
             SorterSearcher.insertionSort(captains);
+            System.out.println("===AFTER INSERTION SORT===");
             for (Captain s : captains){
                 s.displayData();
                 System.out.println();
